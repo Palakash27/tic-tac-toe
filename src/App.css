@@ -28,6 +28,18 @@
   color: #61dafb;
 }
 
+header {
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+  background-color: #487a88;
+}
+
+.won[disabled] {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
