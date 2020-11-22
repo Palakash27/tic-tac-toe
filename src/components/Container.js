@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export const GAME_STATUS = {
   STARTED: "0",
   WIN: "1",
-  DRAW: "2"
+  DRAW: "2",
 };
 
 export default function Container() {
@@ -30,7 +30,7 @@ export default function Container() {
     }
   };
 
-  const changePlayer = player => {
+  const changePlayer = (player) => {
     setBoxFilledCount(BoxFilledCount + 1);
     if (player === "X") {
       setCurrPlayer("O");
@@ -42,7 +42,7 @@ export default function Container() {
     }
   };
 
-  const anyoneWon = newBoxArray => {
+  const anyoneWon = (newBoxArray) => {
     console.log("I'm checking if anyone won");
 
     if (
@@ -133,14 +133,6 @@ export default function Container() {
       {(StatusGame === GAME_STATUS.WIN || StatusGame === GAME_STATUS.DRAW) && (
         <>
           <GameStatus PlayerWon={WhoWon} gameStatus={StatusGame} />
-          <Link
-            to="/tic-tac-toe/start"
-            onClick={() => window.location.reload(false)}
-          >
-            <button style={{ margin: 25, padding: 10, fontSize: "18px" }}>
-              Retry
-            </button>
-          </Link>
           <Link to="/tic-tac-toe">
             <button style={{ margin: 25, padding: 10, fontSize: "18px" }}>
               Main Menu
